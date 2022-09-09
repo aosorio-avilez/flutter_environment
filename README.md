@@ -1,2 +1,3 @@
 # flutter_environment
-Flutter environment
+
+Flutter package that provide environment injection easily through Riverpod
