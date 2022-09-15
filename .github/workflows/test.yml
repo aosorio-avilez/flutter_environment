@@ -18,7 +18,7 @@ jobs:
 
       - uses: VeryGoodOpenSource/very_good_coverage@v1
         with:
-          path: './coverage/lcov.info'
+          path: "./coverage/lcov.info"
 
       - name: Install Dependencies
         run: flutter pub get
