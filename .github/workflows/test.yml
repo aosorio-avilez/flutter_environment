@@ -16,6 +16,11 @@ jobs:
           channel: "stable"
           cache: true
 
+      - name: Test (90% requirement on 95% file)
+        uses: ./
+        with:
+          path: './fixtures/lcov.95.info'
+
       - name: Install Dependencies
         run: flutter pub get
 
@@ -26,7 +31,7 @@ jobs:
         run: flutter analyze --fatal-infos lib test
 
       - name: Test
-        run: flutter test --no-pub --test-randomize-ordering-seed random
+        run: flutter test --coverage --no-pub --test-randomize-ordering-seed random
 
       - name: Coverage
         uses: VeryGoodOpenSource/very_good_coverage@v1
