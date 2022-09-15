@@ -16,4 +16,14 @@ void main() {
 
     expect(container.read(environmentProvider).name, environmentName);
   });
+
+  test('environment provider without implement throw UnimplementedError', () {
+    final container = ProviderContainer();
+
+    try {
+      container.read(environmentProvider);
+    } catch (e) {
+      expect(e, isA<ProviderException>());
+    }
+  });
 }
