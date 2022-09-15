@@ -16,10 +16,6 @@ jobs:
           channel: "stable"
           cache: true
 
-      - uses: VeryGoodOpenSource/very_good_coverage@v1
-        with:
-          path: "./coverage/lcov.info"
-
       - name: Install Dependencies
         run: flutter pub get
 
@@ -31,3 +27,8 @@ jobs:
 
       - name: Test
         run: flutter test --no-pub --test-randomize-ordering-seed random
+
+      - name: Coverage
+        uses: VeryGoodOpenSource/very_good_coverage@v1
+        with:
+          path: './coverage/lcov.info'
