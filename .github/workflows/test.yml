@@ -16,11 +16,6 @@ jobs:
           channel: "stable"
           cache: true
 
-      - name: Test (90% requirement on 95% file)
-        uses: ./
-        with:
-          path: './fixtures/lcov.95.info'
-
       - name: Install Dependencies
         run: flutter pub get
 
